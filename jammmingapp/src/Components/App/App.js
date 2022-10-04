@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import { Component } from 'react';
 import './App.css';
+import {SearchBar} from '../SearchBar/SearchBar';
 
 class App extends Component {
   render() {
@@ -8,7 +9,7 @@ class App extends Component {
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-              {/* Add a SearchBar component */}
+              <SearchBar/>
           <div className="App-playlist">
               {/* Add a SearchResultsComponent */}
               {/* Add a Playlist Component */}
