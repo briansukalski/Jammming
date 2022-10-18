@@ -6,8 +6,8 @@ export class Track extends Component {
         return (
             <div className="Track">
                 <div className="Track-information">
-                    <h3>{/*Track name goes here*/}</h3>
-                    <p>{/*Track artist goes here*/} | {/*Track album goes here*/}</p>
+                    <h3>{this.props.track.name}</h3>
+                    <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
                 <button className="Track-action">{/*+ or - goes here*/}test</button>
             </div>
@@ -15,6 +15,7 @@ export class Track extends Component {
     }
 
     renderAction() {
+        let content;
         if (this.isRemoval) {
             content = '-';
         }
