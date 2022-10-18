@@ -53,6 +53,7 @@ class App extends Component {
         id: 4
       }]
     };
+    this.addTrack = this.addTrack.bind(this);
   }
 
   render() {
@@ -71,9 +72,18 @@ class App extends Component {
   }
 
   addTrack(track) {
-    return;
+    let isNew = true;
+    for (let playlistTrack of this.state.playlistTracks) {
+      if (track.id === playlistTrack.id) {
+        isNew = false;
+        break;
+      }
+    }
+    if (isNew) {
+      this.setState({playlistTracks: this.state.playlistTracks.concat([track])});
+    }
   }
-  
+
 } 
 
 export default App;
