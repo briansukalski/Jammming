@@ -13,21 +13,43 @@ class App extends Component {
         name: 'Photosynthesis',
         artist: 'Frank Turner',
         album: 'Love Ire and Song',
-        id: 1
+        id: 5
       }, {
         name: 'Trees',
         artist: 'Twenty One Pilots',
         album: 'Vessel',
-        id: 2
+        id: 6
       }, {
         name: 'Maybe IDK',
         artist: 'Jon Bellion',
         album: 'The Human Condition',
-        id: 3
+        id: 7
       }, {
         name: 'Everlong',
         artist: 'Foo Fighters',
         album: 'The Colour and the Shape',
+        id: 8
+      }],
+      playlistName: "My Faves",
+      playlistTracks: [{
+        name: 'The Way I Tend To Be',
+        artist: 'Frank Turner',
+        album: 'Tape Deck Heart',
+        id: 1
+      }, {
+        name: 'Legend',
+        artist: 'Twenty One Pilots',
+        album: 'Trench',
+        id: 2
+      }, {
+        name: 'Luxury',
+        artist: 'Jon Bellion',
+        album: 'The Definition',
+        id: 3
+      }, {
+        name: 'These Days',
+        artist: 'Foo Fighters',
+        album: 'Wasting Light',
         id: 4
       }]
     };
@@ -41,12 +63,17 @@ class App extends Component {
               <SearchBar/>
           <div className="App-playlist">
               <SearchResults searchResults={this.state.searchResults}/>
-              <Playlist/>
+              <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
           </div>
         </div>  
       </div>
     );
   }
+
+  addTrack(track) {
+    return;
+  }
+  
 } 
 
 export default App;
