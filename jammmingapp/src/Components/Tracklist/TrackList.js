@@ -4,7 +4,7 @@ import {Track} from '../Track/Track';
 
 export class TrackList extends Component {
     render() {
-        const tracks = this.props.tracks.map(thisTrack  => <Track track={thisTrack} key={thisTrack.id} />);
+        const tracks = this.props.tracks.map(thisTrack  => <Track track={thisTrack} key={thisTrack.id} onAdd={this.props.onAdd} isRemoval={this.props.isRemoval}/>);
         return (
             <div className="TrackList">
                 {tracks}
