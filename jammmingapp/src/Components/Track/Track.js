@@ -31,6 +31,6 @@ export class Track extends Component {
     }
 
     addTrack() {
-        this.props.onAdd = this.props.track;
+        this.props.onAdd(this.props.track);
     }
 }
