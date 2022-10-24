@@ -5,6 +5,7 @@ export class Track extends Component {
     constructor(props) {
         super(props);
         this.addTrack = this.addTrack.bind(this);
+        this.removeTrack = this.removeTrack.bind(this);
     }
 
     render() {
@@ -21,16 +22,23 @@ export class Track extends Component {
 
     renderAction() {
         let content;
-        if (this.isRemoval) {
+        let handlerFunction;
+        if (this.props.isRemoval) {
             content = '-';
+            handlerFunction = this.removeTrack;
         }
         else {
             content = '+';
+            handlerFunction = this.addTrack;
         }
-        return <button className="Track-action" onClick={this.addTrack}>{content}</button>;
+        return <button className="Track-action" onClick={handlerFunction}>{content}</button>;
     }
 
     addTrack() {
         this.props.onAdd(this.props.track);
+    }
+
+    removeTrack() {
+        this.props.onRemove(this.props.track);
     }
 }
