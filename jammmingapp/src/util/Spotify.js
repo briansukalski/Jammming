@@ -1,5 +1,5 @@
 let userToken;
-const clientID = ''/*Client ID goies here*/;
+const clientID = ''/*Client ID goes here*/;
 const redirectURI = 'http://localhost:3000/';
 
 export const Spotify = {
@@ -20,7 +20,12 @@ export const Spotify = {
         }
         else {
             const accessURL = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
+            window.location = accessURL;
         }
+    }
+
+    search (searchTerm) {
+
     }
 
 };
