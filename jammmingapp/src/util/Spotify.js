@@ -1,5 +1,6 @@
+import {clientID} from './clientID'; /*Client ID imported from untracked file*/
+
 let userToken;
-const clientID = ''/*Client ID goes here*/;
 const redirectURI = 'http://localhost:3000/';
 
 export const Spotify = {
