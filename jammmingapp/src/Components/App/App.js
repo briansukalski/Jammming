@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [{
+      searchResults: [/*{
         name: 'Photosynthesis',
         artist: 'Frank Turner',
         album: 'Love Ire and Song',
@@ -30,9 +30,9 @@ class App extends Component {
         artist: 'Foo Fighters',
         album: 'The Colour and the Shape',
         id: 8
-      }],
+      }*/],
       playlistName: "My Faves",
-      playlistTracks: [{
+      playlistTracks: [/*({
         name: 'The Way I Tend To Be',
         artist: 'Frank Turner',
         album: 'Tape Deck Heart',
@@ -52,7 +52,7 @@ class App extends Component {
         artist: 'Foo Fighters',
         album: 'Wasting Light',
         id: 4
-      }]
+      }*/]
     };
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
@@ -107,7 +107,12 @@ class App extends Component {
   }
 
   savePlaylist() {
-    Spotify.savePlaylist(this.state.playlistName, []);
+    const trackURIs = this.state.searchResults.map(searchTrack => searchTrack.uri);
+    Spotify.savePlaylist(this.state.playlistName, trackURIs);
+    this.setState(
+      {playlistName: 'New Playlist',
+      playlistTracks: []}
+    );
   }
 
   search(searchTerm) {
