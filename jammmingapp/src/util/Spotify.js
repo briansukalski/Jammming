@@ -52,7 +52,7 @@ export const Spotify = {
             return;
         }
         const accessToken = Spotify.getAccessToken();
-        const headers = {Authorization: `Bearer: ${accessToken}`};
+        const headers = {Authorization: `Bearer ${accessToken}`};
         let userID;
         //Get user ID from Spotify API
         return fetch('https://api.spotify.com/v1/me', {headers: headers}
@@ -79,7 +79,7 @@ export const Spotify = {
             });
         }
         
-        )
+        );
     }
 
 };
